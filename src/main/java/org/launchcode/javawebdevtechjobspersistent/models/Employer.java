@@ -11,8 +11,7 @@ public class Employer extends AbstractEntity {
     @NotBlank(message = "location is required")
     private String location;
 
-    @OneToMany
-    @JoinColumn
+    @OneToMany(mappedBy="employer",cascade=CascadeType.ALL)
     private List<Job> jobs = new ArrayList<>();
 
     public Employer() {
